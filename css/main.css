@@ -1,0 +1,362 @@
+/* Seletores gerais */
+
+:root{
+
+    --blue-dark: #363f5f;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #f0f2f5;
+    font-family: 'Montserrat', sans-serif;
+}
+
+html{
+    font-size: 93.75%;
+    overflow-x: none;
+}
+
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    color: transparent;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.container{
+    margin: 0 auto;
+    width: min(90vw, 800px);
+}
+
+h2{
+    margin-top: 3em;
+    margin-bottom: 1em;
+    color: var(--blue-dark);
+    font-weight: 500;
+}
+
+a{
+    color: #49aa26;
+    text-decoration: none;
+}
+a:hover{
+    color: #3dd405;
+}
+
+button{
+    width: 48%;
+    height: 35px;
+    border:none;
+    background: lime;
+    color: white;
+    border-radius: 0.22em;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+button:hover{
+    background: #49aa26;
+    transition: all 0.2s;
+}
+
+/* Header */
+
+header{
+    background: #2d4a22;
+    padding: 2em 0 10em;
+    text-align: center;
+    font-weight: 400;
+}
+
+.logo{
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+
+
+/* Sections */
+
+#balance{
+    margin-top: -8em;
+}
+
+#balance h2{
+    color: white;
+    margin: 0 0 0 0;
+}
+
+.cards{
+    background: white;
+    padding: 0.8em 2em;
+    margin: 1em;
+    border-radius: 0.25em;
+}
+
+.cards h3{
+    font-weight: normal;
+    font-size: 1.2em;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+.cards p{
+    font-size: 2em;
+    line-height: 3em;
+    margin-top: 0.5em;
+}
+
+.cards-total{
+    background: lime;
+}
+
+
+/* table */
+
+
+a.button.new{
+    display: inline-block;
+    margin: .8em 0 .8em;
+}
+
+#transaction{
+    width: 100%;
+}
+#transactions{
+    display: block;
+    overflow-x: scroll;
+}
+
+#data-table{
+    width: 100%;
+    border-spacing: 0 0.5em;
+    color: #7e849b;
+}
+
+table th{
+    background: white;
+    font-weight: normal;
+    padding: 1em 2em;
+    text-align: left;
+}
+
+table td{
+    background: white;
+    padding: 1em 2em;
+}
+
+table tr{
+    opacity: 0.7;
+    transition: all 0.2s;
+}
+table tbody tr:hover{
+    opacity: 1;
+    transition: all 0.2s;
+}
+
+table thead tr th:first-child,
+table tbody tr td:first-child{
+    border-radius: 0.25em 0 0 0.25em;
+}
+
+table thead tr th:last-child,
+table tbody tr td:last-child{
+    border-radius: 0 .25em .25em 0;
+}
+
+
+.description{
+    color: var(--blue-dark);
+}
+.income{
+    color: #12a453;
+}
+.expense{
+    color: #e92929;
+}
+.date{
+    font-weight: 200;
+}
+
+.remove-tr{
+    cursor: pointer;
+}
+
+span.remove-all{
+    background: transparent;
+    border: 1px solid #810303;
+    width: auto;
+    color: #d10505;
+    padding: 5px 10px;
+    float: right;
+    transition: all 0.2s;
+    cursor: pointer;
+    margin: .4em .8em 0 0
+}
+span.remove-all:hover{
+    background: #810303;
+    color: white;
+    transition: all 0.3s;
+    border: 1px solid #810303;
+}
+/*Modal clean*/
+
+#modal-clean .modal p{
+    text-align: left;
+}
+#modal-clean .modal span{
+    cursor: pointer;
+}
+#modal-clean .modal .modal-btn-clean{
+    padding: 8px;
+    color: #2d4a22;
+    border: 1px solid #1c1c57;
+    float: left;
+    transition: all 0.3s
+}
+#modal-clean .modal .modal-btn-clean:hover{
+    background: #1c1c57;
+    color: white;
+    transition: all 0.3s
+}
+#modal-clean .modal .modal-btn-cancel{
+    border: 1px solid #810303;
+    padding: 8px;
+    float: right;
+    color: #d10505;
+    transition: all 0.3s
+}
+#modal-clean .modal .modal-btn-cancel:hover{
+    background: #810303;
+    color: white;
+    transition: all 0.3s
+}
+/* Modal */
+
+.modal-overlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 999;
+}
+.modal-overlay.active{
+    opacity: 1;
+    visibility: visible;
+}
+.modal{
+    background: #f0f2f5;
+    position: relative;
+    padding: 2.5em;
+    width: 90%;
+    max-width: 500px;
+}
+
+small.red{
+    color: #7c0808;
+    display: none;
+}
+small.red.visible{
+    display: block;
+    text-align: center;
+    margin: 0px 0px 5px;
+}
+
+/*  Form */
+
+#form{
+    max-width: 500px;
+}
+
+#form>h2{
+    margin-top: 0;
+}
+
+.input-group{
+    margin: 0.2em 0 0.5em
+}
+.modal-input{
+    width: 100%;
+    height: 2em;
+    padding: 1.4em;
+    border: none;
+    border-radius: .2em;
+}
+.alert-form{
+    opacity: 0.7;
+}
+.input-group.action{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.button.cancel{
+    color: #e92929;
+    border: 1px solid red;
+    border-radius: 0.3em;
+    height: 35px;
+    width: 48%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    line-height: 35px;
+    transition: all 0.2s;
+}
+.button.cancel:hover{
+    opacity: 0.8;
+    background: #530000;
+    color:white;
+    border: none;
+    transition: all 0.2s;
+}
+
+
+/* Footer */
+
+footer{
+    margin-top: 5px;
+    background-color: #2d4a22;
+    text-align: center;
+    padding: 0.5em;
+}
+.footer h2{
+    line-height: 0.5em;
+    margin-top: 30px;
+    color: white;
+    font-weight: 500;
+}
+
+
+/* Responsive */
+
+@media (min-width: 800px) {
+
+    html{
+        font-size: 87.5%;
+    }
+
+    #balance{
+        display: grid ;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+}
+

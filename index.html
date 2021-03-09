@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="utf-8">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,800;1,400;1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/main.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Simple Finan$</title>
+
+    </head>
+
+    <body>
+
+        <header>
+            <div class="header">
+                <img src="img/logo.svg" alt="logo dev finan$">
+            </div>
+        </header>
+
+        <main class="container">
+
+            <section id="balance">
+
+                <h2 class="sr-only">&nbsp; Balanço</h2>
+
+                <div class="cards" id="income">
+
+                    <h3>
+
+                        <span>Entradas</span>
+
+                        <img src="img/income.svg" alt="Entradas de dinheiro">
+
+                    </h3>
+
+                    <p id="total-income"></p>
+                </div>
+
+                <div class="cards" id="expense">
+
+                    <h3>
+
+                        <span>Saídas</span>
+
+                        <img src="img/expense.svg" alt="Saídas de dinheiro">
+
+                    </h3>
+
+                    <p id="total-expense"></p>
+                </div>
+
+                <div class="cards cards-total" id="total">
+
+                    <h3>
+
+                        <span>Saldo</span>
+
+                        <img src="img/total.svg" alt="Saldo total da conta">
+
+                    </h3>
+
+                    <p id="total-total"></p>
+                </div>
+
+
+            </section>
+
+            <section id="transaction">
+
+                <h2 class="sr-only">&nbsp; Transações</h2>
+
+                <a href="#" class="button new" onclick="toggle()">
+                    + Nova transação
+                </a>
+                
+                <span class="remove-all" onclick="clearTable.modal()">Limpar tudo</span>
+
+                <div id="transactions">
+
+                    <table id="data-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Descrição</th>
+                                <th>Valor</th>
+                                <th>Data</th>
+                                <th> </th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <section id="modal" class="modal-overlay">
+
+            <div class="modal">
+
+                <div id="form">
+                   
+                   <small class="red" id="error">Por favor, preencha todos os campos</small>
+                   
+                    <h2>Nova translação</h2>
+
+                    <form action="" onsubmit="form.submit(event)">
+                        <div class="input-group">
+
+                            <label class="sr-only" for="description"> Descrição </label>
+                            <input type="text" id="description" name="description" class="modal-input" placeholder="Descrição"> 
+
+                        </div>
+
+                        <div class="input-group">
+
+                            <label class="sr-only" for="amount"> Valor </label>
+                            <input type="number" id="amount" name="amount" class="modal-input" step="0.01" placeholder="0.00"> 
+
+
+                            <small class="alert-form">
+
+                                Use o sinal - (negativo) para os prejuízos e a , (vírgula) para as casas decimais
+
+                            </small>
+
+                        </div>
+
+                        <div class="input-group">
+
+                            <label class="sr-only" for="date"> Data </label>
+                            <input type="date" id="date" name="date" class="modal-input" placeholder="01/01/0001"> 
+
+                        </div>
+
+                        <div class="input-group action">
+                            <a href="#" class="button cancel" onclick="toggle()">
+                                Cancelar
+                            </a>
+
+                            <button>Salvar</button>
+
+                        </div>
+
+                    </form>
+
+
+                </div>
+
+            </div>
+
+        </section>
+        
+        <section id="modal-clean" class="modal-overlay">
+
+            <div class="modal">
+            
+                <p>Voce tem certeza de que quer limpar todas as transações?</p> <br>
+                
+                <span class="modal-btn-clean" onclick="clearTable.clear()">Limpar</span>
+                
+                <span class="modal-btn-cancel" onclick="clearTable.modal()">Cancelar</span>
+            
+            </div>
+            
+        </section>
+
+        <footer>
+
+            <div class="footer">
+                <h2>
+                    Simple Finan$
+                </h2>
+            </div>
+
+        </footer>
+
+        <script src="javaScript/main.js"></script>
+    </body>
+
+</html>
